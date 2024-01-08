@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>::MINIPROYECTO::</title>
+        <style>
+            h1{ font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            font-weight: bold;}
+            p{ font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;}
+            h2{ font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: bold;}
+            .boton{width: 120px; 
+            height: 35px;
+            background-color: #22DD77;
+            color: white;
+            border-radius: 10px;
+            border-color: #22DD77;}
+            .lista{font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            font-weight: bold;}
+        </style>
+    </head>
+    <body>
+        <h1>Bienvendio al Mini Proyecto</h1>
+        <p>Este proyecto muestra la integracion de conceptos de HTML, CSS y JavaScript.</p>
+        <h2>To Do List</h2>
+        <ul class="lista" id = "tarea-lista">
+            <li>Aprende a usar Github</li>
+            <li>Aprende a usar VSCode</li>
+        </ul>
+        <input id="nueva-tarea" type="text" id="texto" placeholder="Agregar nueva Tarea">
+        <button class="boton" onclick="agregarTarea()">Agregar Tarea</button>
+        <script>
+            function agregarTarea(){
+                var tarea = document.getElementById("nueva-tarea").value;
+                var nuevoItem = document.createElement("li");
+                nuevoItem.textContent = tarea;
+                document.getElementById("tarea-lista").appendChild(nuevoItem);
+                document.getElementById("nueva-tarea").value = "";
+            }
+        </script>
+    </body>
+</html>
